@@ -9,7 +9,10 @@ white = [255, 255, 255]
 black = [0, 0, 0]
 
 cont = True
-pressed = 0
+rightPressed = 0
+leftPressed = 0
+upPressed = 0
+downPressed = 0
 
 while cont:
     screenSize = input("What size screen would you like? Small, Medium, or Large?")
@@ -39,42 +42,35 @@ screen.fill(white)
 while True:
     pygame.draw.circle(screen, black, (x,y), 2)
     pygame.display.update()
-    print('x is: ', x, '\ny is:', y)
+    #print('x is: ', x, '\ny is:', y)
 
     key = pygame.key.get_pressed()
     if key[pygame.K_RIGHT]: 
-        if x < xBound:
+        if (x < xBound) & ~rightPressed:
             x+=50
-    # if key[pygame.K_RIGHT] and key[pygame.K_UP]: 
-    #     if x < xBound:
-    #         x+=50
-    #     if y > 0:
-    #         y-=50
-    # if key[pygame.K_RIGHT] and key[pygame.K_DOWN]: 
-    #     if x < xBound:
-    #         x+=50
-    #     if y < yBound:
-    #         y+=50 
-    if key[pygame.K_LEFT]: 
+        rightPressed = 1
+        #time.sleep(0.5)
+    if key[pygame.K_LEFT] & ~leftPressed: 
         if x > 0:
             x-=50
-    # if key[pygame.K_LEFT] and key[pygame.K_UP]: 
-    #     if x > 0:
-    #         x-=50
-    #     if y > 0:
-    #         y-=50
-    # if key[pygame.K_LEFT] and key[pygame.K_DOWN]: 
-    #     if x > 0:
-    #         x-=50
-    #     if y < yBound:
-    #         y+=50
-    if key[pygame.K_UP]: 
+        leftPressed = 1
+    if key[pygame.K_UP] & ~upPressed: 
         if y > 0:
             y-=50
-    if key[pygame.K_DOWN]: 
+        upPressed = 1
+    if key[pygame.K_DOWN] & ~downPressed: 
         if y < yBound:
             y+=50
-    time.sleep(.1)
+        downPressed = 1
+    if key[pygame.K_RIGHT] == False:
+        rightPressed = 0
+    if key[pygame.K_LEFT] == False:
+        leftPressed = 0
+    if key[pygame.K_UP] == False:
+        upPressed = 0
+    if key[pygame.K_DOWN] == False:
+        downPressed = 0
+   
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
