@@ -1,4 +1,4 @@
-Hello, welcome to Peter Venema's hw01 etch a sketh project
+Hello, welcome to Peter Venema's hw01 etch a sketch project
 
 Button Scheme
 Directional movement with arrow keys
