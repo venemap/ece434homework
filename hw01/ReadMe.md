@@ -24,3 +24,19 @@ Tutorial on how to run
     run ./etch_a_sketch_venemap.py in terminal
     terminal will prompt you for what size screen you want, please enter one of the following: small, medium, or large
     Program will open in a new window with your desired screen size. See button scheme section above for controls
+
+# hw01 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  8 | Etch-a-Sketch works
+|  2 | Code documented
+|  2 | Includes #!/usr/bin/env python3 and chmod +x
+|  2 | install.sh included if needed
+|  2 | Used hw01 directory
+|  1 | ReadMe.md included (You had readme.txt)
+|  1 | Name in gitLearn and gitLearnFork (gitLearm missing)
+| 19 | **Total**
+
+pygame is a nice touch.  Seems a bit laggy.
+
