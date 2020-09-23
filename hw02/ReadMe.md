@@ -1,3 +1,19 @@
+# hw02 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2 | Buttons and LEDs 
+|  7 | Etch-a-Sketch works
+|    | Measuring a gpio pin on an Oscilloscope 
+|  4 | Questions answered
+|  0 | Table complete   |*Where's lseek()?*
+|  0 | gpiod        |*I don't see the C gpiod*
+|    | Security     |*missing
+|  0 | ssh port
+|  0 | iptables
+|  0 | fail2ban
+| 13 | **Total**
+
 ## Measuring a GPIO pin on an Oscilloscope
 
 # Shell
@@ -18,7 +34,7 @@
 1. Min voltage = 0V, Max = 3.40V
 2. Period = 100ms exactly
 3. It looked to be exactly 100ms
-4. They didnt differ at all in my case
+4. They didn't differ at all in my case
 5. I was using about 4.6% cpu according to htop
 6. 
 7. Period looked to be very stable
