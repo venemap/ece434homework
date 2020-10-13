@@ -1,3 +1,19 @@
+# hw05 grading
+
+*Let me know when you've finished this and I can regrade it.*
+
+| Points      | Description |
+| ----------- | ----------- |
+|  0 | Project 
+|  0 | Makefile
+|  0 | Kernel Source
+|  2 | Cross-Compiling
+|  0 | Kernel Modules: hello, ebbchar, gpio_test, led
+|  0 | Extras
+| 02 | **Total**
+
+*My comments are in italics. --may*
+
 Basic readme for homework05
 
 ### Cross-Compiling results
