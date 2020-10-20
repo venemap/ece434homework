@@ -1,3 +1,19 @@
+# hw06 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2 | Project 
+|  4 | Questions    *Mostly answered*
+|  0 | PREEMPT_RT
+|  0 | Plots to 500 us
+|  0 | Plots - Heavy/Light load
+|  0 | Extras
+|  6 | **Total**
+
+*Get me some plots and I can get you some points.
+
+*My comments are in italics. --may*
+
 Peter Venema Hw 6
 
 ### Watch
