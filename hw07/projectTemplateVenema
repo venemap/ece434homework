@@ -1,0 +1,92 @@
+[[Category:ECE497 |PC]]
+[[Category:ECE434Fall2020 |PC]]
+{{YoderHead}}
+
+Team members: [[user:Yoder|Venmap]]
+
+== Grading Template ==
+I'm using the following template to grade.  Each slot is 10 points.
+0 = Missing, 5=OK, 10=Wow!
+
+<pre style="color:red">
+09 Executive Summary
+09 Packaging
+09 Installation Instructions 
+09 User Instructions
+09 Highlights
+09 Theory of Operation
+09 Work Breakdown
+09 Future Work/Conclusions
+09 Hackster.io
+09 Demo/Poster
+00 Late
+Comments: Have a good day.
+
+Score:  90/100
+</pre>
+
+<span style="color:red">(Inline Comment)</span>
+
+== Executive Summary ==
+My project will be a smart alarm clock. It will use a display in order to display the time, with the ability to potentially display more information as well, such as the predicted weather of the day, as well as something like tweets that are pulled from twitter. The main avenue of control for this project will either be blynk or flask, though I am currently leaning towards blynk due to its portability and easy ability to use on phones. 
+
+Currently, I have a basic alarm script working that will automatically run once a day at a set time, and a basic blynk interface. The two do not work in tandem yet, but that will fixed shortly. I still need to look into working with the twiter api and weather api in order to pull information down from their respective sites. Beyond that, I also need to decide what kinda of display I will use for this. My two ideas are currently a basic LCD display, with a button that will change from displaying the time to displaying tweets/weather information due to the small size of the screen, and a more robust and complex screen to show all the information at once. I am leaning towards the LCD display at the moment due to my familiarity with it's use from other classes. 
+
+Something that I've not come up with many good ideas yet for is how the speakers will work. I have limited amounts of experience with using speakers on these projects. All I've done so far in previous classes is has been limited to an incredibly basic speaker, and I would like to do something more complex and interesting, but I don't know how yet. Something wireless would be cool, but I do not know if I would be able to manage my time efficinectly enough between the other deliverables I wish to implement on this project as well as balancing my other classes. 
+
+
+== Packaging ==
+If you have hardware, consider [http://cpprojects.blogspot.com/2013/07/small-build-big-execuition.html Small Build, Big Execuition] for ideas on the final packaging.
+
+The hardware for this project will be fairly limited.
+1x display (LCD or other -- currently undecided)
+1x speaker (wireless/wired -- currently undecided)
+1x phone w/ blynk
+
+== Installation Instructions ==
+Due to this project just beginning, there are no installation instructions that have been decided on. In the future, I will try to set up a make file to streamline the installation and compiling of any changes to the code so as to make this as user friendly as possible. 
+
+link to github -- https://github.com/venemap/ece434homeworkVenema/tree/master/finalProjectVenema
+
+
+
+Give step by step instructions on how to install your project.  
+
+* Include your [https://github.com/ github] path as a link like this to the read-only git site:  [https://github.com/MarkAYoder/gitLearn https://github.com/MarkAYoder/gitLearn]. 
+* Be sure your README.md is includes an up-to-date and clear description of your project so that someone who comes across you git repository can quickly learn what you did and how they can reproduce it.
+* Include a Makefile for your code if using C.
+* Include any additional packages installed via '''apt'''.  Include '''install.sh''' and '''setup.sh''' files.
+* Include kernel mods.
+* If there is extra hardware needed, include links to where it can be obtained.
+
+== User Instructions ==
+
+Once everything is installed, how do you use the program?  Give details here, so if you have a long user manual, link to it here.
+
+Consider making it autostart for full credit.
+
+== Highlights ==
+
+Here is where you brag about what your project can do.
+
+Include a [http://www.youtube.com/ YouTube] demo the audio description.
+
+== Theory of Operation ==
+
+Give a high level overview of the structure of your software.  Are you using GStreamer?  Show a diagram of the pipeline.  Are you running multiple tasks?  Show what they do and how they interact.
+
+== Work Breakdown ==
+
+List the major tasks in your project and who did what.
+
+Also list here what doesn't work yet and when you think it will be finished and who is finishing it.
+
+== Future Work ==
+
+Suggest addition things that could be done with this project.
+
+== Conclusions ==
+
+Give some concluding thoughts about the project. Suggest some future additions that could make it even more interesting.
+
+{{YoderFoot}}
