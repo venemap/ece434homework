@@ -1,0 +1,1 @@
+config-pin P9_31 pruout
