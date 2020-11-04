@@ -4,6 +4,10 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+import smbus
+
+bus = smbus.SMBus(2)
+address = 0x48
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
@@ -42,6 +46,8 @@ def main():
     result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
                                 range=SAMPLE_RANGE_NAME).execute()
     values = result.get('values', [])
+    
+    temp = bus.read_byte_data(address, 0) * 1.8 + 32
 
     if not values:
         print('No data found.')
