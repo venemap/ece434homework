@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import os, pygame, time, math, blynklib, sys, math, schedule
-import tweepy as tw
 from datetime import date
 import datetime
 import calendar
@@ -76,43 +75,31 @@ class pyclock :
         api = tw.API(auth)
         
         # https://stackoverflow.com/questions/20842801/how-to-display-text-in-pygame
-        myfont = pygame.font.Font('LCD_test/DS-DIGI.TTF', 60)
-        myfont2 = pygame.font.SysFont('Arial', 45)
-        myfontTZ = pygame.font.SysFont('Arial', 25)
+        clockText = pygame.font.Font('LCD_test/DS-DIGI.TTF', 60)
+        dateText = pygame.font.SysFont('Arial', 45)
+        timezoneText = pygame.font.SysFont('Arial', 25)
         weatherFont = pygame.font.SysFont('Arial', 35)
         weatherStatus = pygame.font.SysFont('Arial', 30)
-        #weatherFont.set_bold(True)
         
-        bg = pygame.image.load("LCD_test/swirlyBackground.jpg")
+        #bg = pygame.image.load("LCD_test/swirlyBackground.jpg")
         bg = pygame.image.load("LCD_test/basicGrey.jpg")
         self.screen.blit(bg, (0, 0))
         
-
         
-        api = tw.API(auth)
-
-        #public_tweets = api.home_timeline()
-
-        #user = api.get_user('ece343final')
-        #print(user.screen_name)
-        #for tweet in public_tweets:
-        #    print(tweet.text)
-                
         while True:
             blynk.run()
-            if(timer > 300):
+            if(timer > 300): #every 5 mins update temperate
                 weatherCondition, currentTemp = updateWeather(mgr)
                 timer = 0
 
-            if(alarmSet):
+            if(alarmSet): #check if alarm should go off every 1s
                 schedule.run_pending()
                 
             currentTime = time.localtime()
             hour = currentTime[3]    # Convert to 12 hour time
             minute = currentTime[4]
             second = currentTime[5]
-            #hour -= 5 #random utc timezone issue
-            
+
             if second < 10:
                 second = "0" + str(second)
             else:
@@ -135,28 +122,28 @@ class pyclock :
             else:
                 tz = "AM"
                 
-            hour = hour % 12 #conver to 12hour time
+            hour = hour % 12 #convert to 12hour time
                 
+            # dayName monthNum/dayNum (ex. monday 1/21)
             dateString = dayWord + " " + monthNum + "/" + dayNum
                 
             ## Draw Time on Left
             if hour < 10:
-                hour = " " + str(hour)
-            else: 
-                hour = str(hour)
-            textsurface = myfont.render(
+                hour = " " + str(hour) #add space in hour to keep position of text constant
+            else: hour = str(hour)
+            textsurface = clockText.render(
                     hour+":"+ minute, 
                     True, (0, 0, 0))
             self.screen.blit(textsurface,(25, 120))
-            textsurface = myfontTZ.render(tz, True, (0,0,0))
+            textsurface = timezoneText.render(tz, True, (0,0,0))
             self.screen.blit(textsurface, (140, 130))
             
-            ## Divider
+            ## Divider line
             pygame.draw.line(self.screen, (0,0,0), (200, 120), (200, 200), 3)
             
             
             ## Draw Date at top
-            textSurface2 = myfont2.render(dateString, True, (0,0,0))
+            textSurface2 = dateText.render(dateString, True, (0,0,0))
             self.screen.blit(textSurface2, (20, 30))
             
             
@@ -169,7 +156,7 @@ class pyclock :
                 str(weatherCondition).lower(), True, (0,0,0))
             self.screen.blit(weatherConditionString, (220, 170))
                 
-            #wait 1s and redraw
+            #wait 1s and redraw screen
             pygame.display.update()
             pygame.time.wait(1000)
             timer += 1
@@ -183,8 +170,7 @@ def main(blynk):
     
 def initBlynk():
     # Get the autherization code (See setup.sh)
-    BLYNK_AUTH = os.getenv('BLYNK_AUTH', default="")
-    BLYNK_AUTH = "LrwqMOl2bfhoo7EKqAhx-0ahGRge92r_"
+    BLYNK_AUTH = config.blynkKey
     if(BLYNK_AUTH == ""):
         print("BLYNK_AUTH is not set")
         sys.exit()
