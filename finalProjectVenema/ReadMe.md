@@ -10,7 +10,7 @@
 This file holds all of the necessary api keys for the program to work. Twitter api keys are currently not necessary due to this feature not getting implemented (see TODO)
 format of file is as follows:
 
-config.py /n
+config.py <br /><br />
 
 consumer_key = 'insert twitter api key here'
 consumer_secret = 'insert twitter api key here'
