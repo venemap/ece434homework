@@ -204,7 +204,7 @@ def soundAlarm():
     print("insert applicable alarm here")
     
 def parseDate(date):
-    # Textual month, day and year	
+    # parse date into segments
     d2 = date.today().strftime("%A %b %d %m")
     monthNum = date.today().strftime("%m")
     dayWord = date.today().strftime("%A")
