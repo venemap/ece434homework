@@ -12,18 +12,17 @@ format of file is as follows:
 
 config.py <br /><br />
 
-consumer_key = 'insert twitter api key here'
-consumer_secret = 'insert twitter api key here'
-access_token = 'insert twitter api key here'
-access_token_secret =  'insert twitter api key here'
+consumer_key = 'insert twitter api key here' <br />
+consumer_secret = 'insert twitter api key here' <br />
+access_token = 'insert twitter api key here' <br />
+access_token_secret =  'insert twitter api key here' <br />
    
-owmkey = 'open weather api key here'
-
-blynkKey = "blynk api key here"
+owmkey = 'open weather api key here'<br />
+blynkKey = 'blynk api key here' <br />
 
 
 ## TODO
-1. Migrate program to use beaglebone black wireless (or some equivalent) so that there is no need to pass internet via usb connection from pc
+1. Migrate program to use beaglebone black wireless (or some equivalent) so that there is no need to pass internet via usb connection from PC
 2. Fade background into different images based on what the weather condition is (rain, clear, cloudy, thunderstorm, etc)
 3. Integrate twitter in some way (tweet when alarm goes off?), couldn't figure out a good way to integrate this feature in without it feeling shoehorned in
 4. Create actual enclosure for display + bone
