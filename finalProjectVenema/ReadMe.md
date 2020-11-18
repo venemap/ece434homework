@@ -29,3 +29,7 @@ blynkKey = 'blynk api key here' <br />
 
 ## Starting Point
 This program started as from the following file because it already set up the pygame + framebuffer interface (https://github.com/MarkAYoder/BeagleBoard-exercises/blob/master/displays/ili9341/pygame/clock.py)
+
+ELINUX + HACKSTERIO LINKS <br />
+https://elinux.org/ECE434blynkAlarmClock  <br />
+https://www.hackster.io/peter-venema/ece434-blynk-alarm-clock-4a99b0
